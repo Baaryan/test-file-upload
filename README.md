@@ -19,5 +19,5 @@ Selenium -> test-file-upload
 
 ### Selenium Legacy JSON test scripts to test on iOS devices
 
-1. 
+1. [Ruby](https://automate.browserstack.com/builds/2f18512e248860fa123b747b27c46b90ad43079d/sessions/172a214ca357e1c0923c805aeb1f8706fe9c6ce0?auth_token=a7eea0345d33c5031e1a40a451ce2690649ce037af1938f5476efce2b4ef5573)
 2.
