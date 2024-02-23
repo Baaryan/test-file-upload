@@ -31,6 +31,8 @@ Selenium -> test-file-upload
 
 4. [C#](https://automate.browserstack.com/builds/c72a91edb31ab94cfc3401f85a879529def6e1d8/sessions/ae9ce2bd138afc8433f80b3f045580bafc462693?auth_token=32aae679bad9417c3fe6f2243f964de105f282f8f0d10865e1347c362280da58)
 
+5. [NodeJS](https://automate.browserstack.com/builds/2f18512e248860fa123b747b27c46b90ad43079d/sessions/c5ebd8ba2d08228e6d731876cae4facbb3c82a2b?auth_token=167ad2c63139481297e7fb226de6e3c4ae926752a16c05921b0ea8181db85612)
+
 Note:
 1. Python: Only Appium v1 supports Legacy JSON, therefore for those scripts to work use the following versions:
   - Appium-Python-Client==1.3.0
