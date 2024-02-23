@@ -19,6 +19,8 @@ Selenium -> test-file-upload
    
 3. [Java](https://automate.browserstack.com/builds/f12ad5ffdaa78cda479d52352b4030be2e11802a/sessions/d3737ca905083630e5fa34fdc632ae03aa1ef610?auth_token=c88e007afe15fca93c0bf09152c8abd5182cb20e5270b13bb0f8885c21f7103c)
 
+4. [C#](https://automate.browserstack.com/builds/7c3e0bf186848b3400e9cb4f263eb9ef67fcaf9a/sessions/736fbd17db11893af28993c705098e10468cff6d?auth_token=2910fe5a0845a1fa57b4a31dcdf310576f163b0957b1b4c8642efbdf1f889d12)
+
 ### Selenium Legacy JSON test scripts to test on iOS devices
 
 1. [Ruby](https://automate.browserstack.com/builds/2f18512e248860fa123b747b27c46b90ad43079d/sessions/172a214ca357e1c0923c805aeb1f8706fe9c6ce0?auth_token=a7eea0345d33c5031e1a40a451ce2690649ce037af1938f5476efce2b4ef5573)
@@ -27,7 +29,18 @@ Selenium -> test-file-upload
 
 3. [Java](https://automate.browserstack.com/builds/b5ede2e0bf812fad3c3e18f8eff115930d4e3e57/sessions/eb73b08b5a0dd94b9a31de67a16ba94fa8f35b4f?auth_token=60893b55853a76c648a2d0bf62ee466b00a9236dfec2c37418d44b29ceb9d4a8)
 
+4. [C#](https://automate.browserstack.com/builds/c72a91edb31ab94cfc3401f85a879529def6e1d8/sessions/ae9ce2bd138afc8433f80b3f045580bafc462693?auth_token=32aae679bad9417c3fe6f2243f964de105f282f8f0d10865e1347c362280da58)
+
 Note:
 1. Python: Only Appium v1 supports Legacy JSON, therefore for those scripts to work use the following versions:
   - Appium-Python-Client==1.3.0
   - urllib3==1.26.16
+
+2. C#: Dependency versions that support Legacy JSON:
+    ```
+    <PackageReference Include="Appium.WebDriver" Version="4.4.5" />
+    <PackageReference Include="Castle.Core" Version="4.4.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Selenium.Support" Version="3.141.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+    ```
