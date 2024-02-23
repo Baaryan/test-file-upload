@@ -17,7 +17,6 @@ desired_cap = {
 		"userName": "username",
     "accessKey": "access-key"
 	},
-	"appium:nativeWebTap": True,
 }
 options = XCUITestOptions()
 options.set_capability('appium:nativeWebTap', True)
