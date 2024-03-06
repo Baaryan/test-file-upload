@@ -3,6 +3,7 @@ using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.iOS;
+using dotenv.net;
 
 namespace SampleTests
 {
@@ -24,9 +25,11 @@ namespace SampleTests
             capabilities.AutomationName = "XCUITest";
             capabilities.AddAdditionalAppiumOption("appium:nativeWebTap", true);
 
-            driver = new IOSDriver(
-              new Uri("https://<<username>>:<<access-key>>@hub-cloud.browserstack.com/wd/hub/"), capabilities
-            );
+            DotEnv.Load();
+            string? userName = Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME");
+            string? accessKey = Environment.GetEnvironmentVariable("BROWSERSTACK_ACCESS_KEY");
+
+            Uri serverUri = new Uri($"https://{userName}:{accessKey}@hub-cloud.browserstack.com/wd/hub/");
             
             driver.Navigate().GoToUrl("https://the-internet.herokuapp.com/upload");
             Thread.Sleep(10000);

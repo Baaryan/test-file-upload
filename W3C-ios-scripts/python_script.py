@@ -5,6 +5,13 @@ from selenium.webdriver.common import action_chains, keys
 from time import sleep
 from selenium.webdriver.common.by import By
 from appium.options.ios import XCUITestOptions
+from dotenv import load_dotenv   
+import os 
+
+load_dotenv()   
+
+user_name = os.environ.get('BROWSERSTACK_USERNAME')
+access_key = os.environ.get('BROWSERSTACK_ACCESS_KEY')
 
 desired_cap = {
 	'bstack:options' : {
@@ -14,8 +21,8 @@ desired_cap = {
 		"projectName" : "Sample Test",
 		"buildName" : "Sample_test",
 		"debug" : "true",
-		"userName": "username",
-    "accessKey": "access-key"
+		"userName": user_name,
+    "accessKey": access_key
 	},
 }
 options = XCUITestOptions()

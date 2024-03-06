@@ -1,5 +1,10 @@
 require 'rubygems'
 require 'appium_lib'
+require 'dotenv'
+Dotenv.load
+
+user_name = ENV['BROWSERSTACK_USERNAME']
+access_key = ENV['BROWSERSTACK_ACCESS_KEY']
 
 # Input capabilities
 caps = {}
@@ -11,7 +16,7 @@ caps['build'] = 'BStack Build Number 1' # CI/CD job or build name
 caps['nativeWebTap'] = 'true'
 caps['appium:automationName'] = 'XCUITest'
 
-appium_driver = Appium::Driver.new({'caps' => caps,'appium_lib' => {:server_url => "https://<<username>>:<<access-key>>@hub-cloud.browserstack.com/wd/hub"}}, true)
+appium_driver = Appium::Driver.new({'caps' => caps,'appium_lib' => {:server_url => "https://#{user_name}:#{access_key}@hub-cloud.browserstack.com/wd/hub"}}, true)
 driver = appium_driver.start_driver
 
 driver.navigate.to "https://the-internet.herokuapp.com/upload"

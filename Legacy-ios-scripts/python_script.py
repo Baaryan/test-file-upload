@@ -1,6 +1,13 @@
 from appium import webdriver
 from time import sleep
 from selenium.webdriver.common.by import By
+from dotenv import load_dotenv   
+import os 
+
+load_dotenv()   
+
+user_name = os.environ.get('BROWSERSTACK_USERNAME')
+access_key = os.environ.get('BROWSERSTACK_ACCESS_KEY')
 
 desired_cap = {
   "device": "iPhone 12",
@@ -13,7 +20,7 @@ desired_cap = {
 	'appium:automationName': 'XCUITest',
 }
 
-driver = webdriver.Remote(command_executor='https://<<username>>:<<access-key>>@hub-cloud.browserstack.com/wd/hub', desired_capabilities=desired_cap)
+driver = webdriver.Remote(command_executor=f'https://{user_name}:{access_key}@hub-cloud.browserstack.com/wd/hub', desired_capabilities=desired_cap)
 driver.get("https://the-internet.herokuapp.com/upload")
 sleep(10)
 driver.find_element_by_id('file-upload').click()
