@@ -1,4 +1,5 @@
 var wd = require('wd');
+require('dotenv').config();
 // Input capabilities
 const capabilities = {
  'device' : 'iPhone 12',
@@ -9,8 +10,12 @@ const capabilities = {
  'build': 'BStack Build Number 1',
   "nativeWebTap":true
 }
+
+const username = process.env.BROWSERSTACK_USERNAME;
+const accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
+
 async function runTestWithCaps () {
-  let driver = wd.promiseRemote("https://<username>:<access-key>@hub-cloud.browserstack.com/wd/hub");
+  let driver = wd.promiseRemote(`https://${username}:${accessKey}@hub-cloud.browserstack.com/wd/hub`);
   await driver.init(capabilities);
   await driver.get("https://the-internet.herokuapp.com/upload")
   await new Promise(r => setTimeout(r, 2000));
