@@ -1,5 +1,9 @@
 
 const { remote, By } = require('webdriverio');
+require('dotenv').config();
+
+const username = process.env.BROWSERSTACK_USERNAME;
+const accessKey = process.env.BROWSERSTACK_ACCESS_KEY;
 
 const desiredCapabilities = {
     'bstack:options': {
@@ -9,8 +13,8 @@ const desiredCapabilities = {
         'projectName': 'Sample Test',
         'buildName': 'Sample_test',
         'debug': 'true',
-        'userName': 'username',
-        'accessKey': 'access-key',
+        'userName': username,
+        'accessKey': accessKey,
     },
 };
 
