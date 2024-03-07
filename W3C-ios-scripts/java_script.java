@@ -8,9 +8,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import io.github.cdimascio.dotenv.Dotenv;
 public class Upload extends Thread{
-   public static String userName = "";
-   public static String accessKey = "";
+   private static Dotenv dotenv = Dotenv.load();
+   public static String userName = dotenv.get("BROWSERSTACK_USERNAME");
+   public static String accessKey = dotenv.get("BROWSERSTACK_ACCESS_KEY");
    public static void main(String args[]) throws MalformedURLException, InterruptedException {
     DesiredCapabilities capabilities = new DesiredCapabilities();
     HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
